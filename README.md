@@ -76,15 +76,15 @@ Trade-off between reconstruction accuracy versus number of operations and parame
 The Mult-Adds is computed for HR image of size 720p 
 
 <p align="center">
-  <img src="results/set5_chart.pdf">
+  <img src="results/set5-1.png">
 </p>
 <p align="center">
-  <img src="results/set14_chart.pdf">
+  <img src="results/set14-1.png">
 </p>
 <p align="center">
-  <img src="results/bsds100_chart.pdf">
+  <img src="results/BSDS100.png">
 </p>
 <p align="center">
-  <img src="results/urban100_chart.pdf">
+  <img src="results/Urban100.png">
 </p>
 
