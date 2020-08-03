@@ -4,64 +4,87 @@ This is the Pytorch code for our proposed SubPixel-BackProjection Network For Li
 Super-Resolution.
 Training code will be released soon.
 
-Dependencies:
+### Dependencies
+  * python 3.x
+  * pytorch 1.1.0
+  * cuda10
+  * torch
+  * torchvision
+  * scikit-image
+  * pillow
+  * pyyaml
+  * visdom
+  * tqdm
+  * opencv
+  
+#### Install Dependencies
+```
+# Create virtual environment
+conda create -n sr_env
 
-	python 3.x
-	pytorch 1.1.0
-	cuda10
-	torch
-	torchvision
-	scikit-image
-	pillow
-	pyyaml
-	visdom
-	tqdm
-	opencv
+# Install torch
+conda install pytorch torchvision cudatoolkit=10.0 -c pytorch
 
-	# Create virtual environment
-	conda create -n sr_env
+# Install skimage
+conda install -c conda-forge scikit-image
 
-	# Install torch
-	conda install pytorch torchvision cudatoolkit=10.0 -c pytorch
+# Install visdom
+conda install -c conda-forge visdom
 
-	# Install skimage
-	conda install -c conda-forge scikit-image
+# Install pyyaml
+conda install -c conda-forge pyyaml
 
-	# Install visdom
-	conda install -c conda-forge visdom
+# Install tqdm
+conda install -c conda-forge tqdm
 
-	# Install pyyaml
-	conda install -c conda-forge pyyaml
+# Install OpenCV
+onda install -c conda-forge opencv
+```
 
-	# Install tqdm
-	conda install -c conda-forge tqdm
+## Datasets
 
-	conda install -c conda-forge oprncv
+This project contains 2/4 benchmark datasets Set5 and Set14 due to file size limitation.
 
-Datasets:
+All the benchmark datasets can be downloaded from: http://vllab.ucmerced.edu/wlai24/LapSRN/results/SR_testing_datasets.zip
 
-	This project contains 2/4 benchmark datasets Set5 and Set14 due to file size limitation.
+To test BSDS100 and Urban100, check the directory options/test/ for SPBP_S.yaml, SPBP_M.yaml, SPBP_L.yaml and SPBP_L+.yaml 
+and add the following snippet under the 'datasets:'
+```
+  test_3:  # the 2st test dataset
+    name: BSDS100
+    data_location: data/datasets/BSDS100/
+    shuffle: false
+    n_workers: 1  # per GPU
+    batch_size: 1
+    repeat: 1
+  test_4:  # the 2st test dataset
+    name: Urban100
+    data_location: data/datasets/Urban100/
+    shuffle: false
+    n_workers: 1  # per GPU
+    batch_size: 1
+    repeat: 1
+```
 
-	All the benchmark datasets can be downloaded from: http://vllab.ucmerced.edu/wlai24/LapSRN/results/SR_testing_datasets.zip
+## Testing
+```
+To run the test, either python test.py -config options/test/CONFIG.yaml can be used or simply run the test_run.sh file.
+```
 
-	To test BSDS100 and Urban100, check the directory options/test/ for SPBP_S.yaml, SPBP_M.yaml, SPBP_L.yaml and SPBP_L+.yaml 
-	and add the following snippet under the 'datasets:'
+## Results
+Trade-off between reconstruction accuracy versus number of operations and parameters on three datasets. The xaxis and the y-axis denote the Multi-Adds and PSNR (evaluated on the Y channel), and the size of the circle represents the number of parameters.
+The Mult-Adds is computed for HR image of size 720p 
 
-	  test_3:  # the 2st test dataset
-	    name: BSDS100
-	    data_location: data/datasets/BSDS100/
-	    shuffle: false
-	    n_workers: 1  # per GPU
-	    batch_size: 1
-	    repeat: 1
-	  test_4:  # the 2st test dataset
-	    name: Urban100
-	    data_location: data/datasets/Urban100/
-	    shuffle: false
-	    n_workers: 1  # per GPU
-	    batch_size: 1
-	    repeat: 1
+<p align="center">
+  <img src="results/set5_chart.pdf">
+</p>
+<p align="center">
+  <img src="results/set14_chart.pdf">
+</p>
+<p align="center">
+  <img src="results/bsds100_chart.pdf">
+</p>
+<p align="center">
+  <img src="results/urban100_chart.pdf">
+</p>
 
-Testing:
-
-	To run the test, either python test.py -config options/test/CONFIG.yaml can be used or simply run the test_run.sh file.
