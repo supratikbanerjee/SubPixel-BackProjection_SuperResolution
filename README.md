@@ -74,17 +74,20 @@ To run the test, either python test.py -config options/test/CONFIG.yaml can be u
 ## Results
 Trade-off between reconstruction accuracy versus number of operations and parameters on three datasets. The xaxis and the y-axis denote the Multi-Adds and PSNR (evaluated on the Y channel), and the size of the circle represents the number of parameters.
 The Mult-Adds is computed for HR image of size 720p 
-
 <p align="center">
   <img src="results/set5-1.png">
+ <figcaption>Set5</figcaption>
 </p>
 <p align="center">
   <img src="results/set14-1.png">
+ <figcaption>Set14</figcaption>
 </p>
 <p align="center">
   <img src="results/BSDS100.png">
+ <figcaption>BSDS100</figcaption>
 </p>
 <p align="center">
   <img src="results/Urban100.png">
+ <figcaption>Urban100</figcaption>
 </p>
 
