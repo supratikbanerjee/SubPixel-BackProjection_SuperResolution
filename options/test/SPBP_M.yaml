@@ -1,0 +1,37 @@
+name: SPBP_M
+is_train: false
+ensemble: false
+use_chop: false
+model: cnn
+device: cuda:0
+
+dataset:
+  read: ram # disk
+  scale: 2
+  test_1:
+    name: Set5
+    data_location: data/datasets/Set5/
+    shuffle: false
+    n_workers: 1  # per GPU
+    batch_size: 1
+    repeat: 1
+  test_2:  # the 2st test dataset
+    name: Set14
+    data_location: data/datasets/Set14/
+    shuffle: false
+    n_workers: 1  # per GPU
+    batch_size: 1
+    repeat: 1
+
+#### network structures
+network_G:
+  model: SPBP
+  num_features: 16
+  in_channels: 3
+  out_channels: 3
+  num_groups: 10
+
+#### path
+path:
+  experiments: trained_models/experiments/
+  pretrain_model_G: trained_models/SPBP_M.pth
