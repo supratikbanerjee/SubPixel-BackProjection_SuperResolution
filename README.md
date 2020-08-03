@@ -1,7 +1,7 @@
 ﻿# SPBP (SubPixel-BackProjection)
 
 This is the Pytorch code for our proposed SubPixel-BackProjection Network For Lightweight Single Image
-Super-Resolution.
+Super-Resolution [Paper](https://www.researchgate.net/publication/342716640_Sub-Pixel_Back-Projection_Network_For_Lightweight_Single_Image_Super-Resolution).
 Training code will be released soon.
 
 ### Dependencies
