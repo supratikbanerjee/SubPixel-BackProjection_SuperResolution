@@ -104,6 +104,5 @@ If you find this work useful, please consider citing it.
     eprint={2008.01116},
     archivePrefix={arXiv}
 }
-}
 
 ```
