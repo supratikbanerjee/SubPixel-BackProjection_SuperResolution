@@ -96,13 +96,12 @@ Trade-off between reconstruction accuracy versus number of operations and parame
 ## Citations
 If you find this work useful, please consider citing it.
 ```
-
 @misc{banerjee2020subpixel,
     title={Sub-Pixel Back-Projection Network For Lightweight Single Image Super-Resolution},
     author={Supratik Banerjee and Cagri Ozcinar and Aakanksha Rana and Aljosa Smolic and Michael Manzke},
     year={2020},
     eprint={2008.01116},
-    archivePrefix={arXiv}
+    archivePrefix={arXiv},
+    primaryClass={eess.IV}
 }
-
 ```
